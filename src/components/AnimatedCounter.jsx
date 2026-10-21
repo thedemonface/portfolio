@@ -16,6 +16,11 @@ const AnimatedCounter = () => {
       const numberElement = counter.querySelector(".counter-number");
       const item = counterItems[index];
 
+      if (item.text) {
+        numberElement.textContent = item.text;
+        return;
+      }
+
       // Set initial value to 0
       gsap.set(numberElement, { innerText: "0" });
 
@@ -39,7 +44,7 @@ const AnimatedCounter = () => {
 
   return (
     <div id="counter" ref={counterRef} className="padding-x-lg xl:mt-0 mt-32">
-      <div className="mx-auto grid-4-cols">
+      <div className="mx-auto grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-5">
         {counterItems.map((item, index) => (
           <div
             key={index}
@@ -47,7 +52,7 @@ const AnimatedCounter = () => {
             className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center"
           >
             <div className="counter-number text-white-50 text-5xl font-bold mb-2">
-              0 {item.suffix}
+              {item.text ?? `0 ${item.suffix}`}
             </div>
             <div className="text-white-50 text-lg">{item.label}</div>
           </div>

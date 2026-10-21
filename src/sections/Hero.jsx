@@ -50,10 +50,18 @@ const Hero = () => {
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
-            </p>
+            <div className="relative z-10 flex items-center gap-5">
+              <img
+                src="/images/abhishek.png"
+                alt="Abhishek Shukla"
+                className="size-24 flex-none rounded-full object-cover md:size-32"
+              />
+              <p className="text-white-50 md:text-xl pointer-events-none">
+                Hi, I&apos;m Abhishek Shukla, a Technical Product Manager and
+                Project Manager in Pune and Mumbai. I take products from
+                requirements through release with Agile teams.
+              </p>
+            </div>
 
             <Button
               text="See My Work"
